@@ -96,6 +96,7 @@ Car.prototype.fill = function(distance){
     this.tank = this.tank - this.milesPerGallon;
 }
 
+
 /*
   TASK 3
     - Write a Baby constructor subclassing Person.
@@ -103,16 +104,27 @@ Car.prototype.fill = function(distance){
     - Besides the methods on Person.prototype, babies have the ability to `.play()`:
         + Should return a string "Playing with x", x being the favorite toy.
 */
-function Baby() {
+function Baby(attributes) {
+    Person.call(this, attributes);
+}
 
+const baby = new Baby ({
+    name: 'Gretta',
+    age: 1,
+    favoriteToy: 'Rattle',
+});
+
+Baby.prototype = Object.create(Person.prototype);
+Baby.prototype.play = function(){
+    console.log(`Playing with ${this.favoriteToy}, ${favoriteToy}being the favorite toy`);
 }
 
 /* 
   TASK 4
 
   In your own words explain the four principles for the "this" keyword below:
-  1. 
-  2. 
+  1. Window or global bound
+  2. explicit bound
   3. 
   4. 
 */
