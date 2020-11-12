@@ -91,7 +91,7 @@ Car.prototype.fill = function(gallons){
     return this.tank += gallons;
 }
 
-Car.prototype.fill = function(distance){
+Car.prototype.drive = function(distance){
     this.odometer += distance;
     this.tank = this.tank - this.milesPerGallon;
 }
@@ -108,7 +108,7 @@ function Baby(attributes) {
     Person.call(this, attributes);
 }
 
-const baby = new Baby ({
+const personTwo = new Baby ({
     name: 'Gretta',
     age: 1,
     favoriteToy: 'Rattle',
@@ -124,9 +124,9 @@ Baby.prototype.play = function(){
 
   In your own words explain the four principles for the "this" keyword below:
   1. Window or global bound
-  2. explicit bound
-  3. 
-  4. 
+  2. explicit bind
+  3. in strict mode, .this is undefined
+  4. implicit bind or this.
 */
 
 
